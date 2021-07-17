@@ -46,7 +46,7 @@ ROOT_URLCONF = 'brainwrinkles.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [os.path.join(BASE_DIR,'templates')],
+        'DIRS': [os.path.join(BASE_DIR,'templates')], # Added DIR IOT find the templates DIR that is moved to the root DIR. 
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
