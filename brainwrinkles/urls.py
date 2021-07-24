@@ -16,11 +16,13 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 from django.contrib.auth import views as auth_views
+from apps.courses.views import CourseListView
 
 
 urlpatterns = [
     path('accounts/login/', auth_views.LoginView.as_view(), name='login'), # Class based
     path('accounts/logout/', auth_views.LogoutView.as_view(), name='logout'), # Class based
     path('admin/', admin.site.urls),
-    path('courses/', include('apps.courses.urls'))
+    path('courses/', include('apps.courses.urls')),
+    path('', CourseListView.as_view(), name='course_list'),
 ]
