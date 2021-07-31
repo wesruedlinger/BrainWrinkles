@@ -24,5 +24,6 @@ urlpatterns = [
     path('accounts/logout/', auth_views.LogoutView.as_view(), name='logout'), # Class based
     path('admin/', admin.site.urls),
     path('courses/', include('apps.courses.urls')),
+    path('students/', include('apps.students.urls')),
     path('', CourseListView.as_view(), name='course_list'),
 ]

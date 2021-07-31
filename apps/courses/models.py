@@ -24,6 +24,8 @@ class Course(models.Model):
     subject = models.ForeignKey(Subject, related_name='courses', on_delete=models.CASCADE)
     overview = models.TextField()
     created = models.DateTimeField(auto_now_add=True)
+    students = models.ManyToManyField(User, related_name='courses_joined', blank=True)
+
 
     class Meta:
         ordering = ['-created'] # order the courses with newest first
